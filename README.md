@@ -5,18 +5,18 @@ date: "2024-02-29"
 ---
 
 
-# removes the rows that have more than half non values and sorts them by year and Country
+# Removes the rows that have more than half non values and sorts them by year and Country
 
-## reads current file directory
+## Reads current file directory
 ```{r}
 data_pol <- read.csv("C:/Users/edvin/Downloads/Duomenys-20240228/datapol.csv")
 ```
-## removes the rows that have more than half non values
+## Removes the rows that have more than half non values
 ```{r}
 data_pol <- data_pol[(rowSums(is.na(data_pol)) <=
                             ncol(data_pol) / 2), ]
 ```
-## sorts values by year and country
+## Sorts values by year and country
 ```{r}
 library(dplyr)
 data_pol <- data_pol %>%
