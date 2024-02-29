@@ -13,8 +13,8 @@ data_pol <- read.csv("C:/Users/edvin/Downloads/Duomenys-20240228/datapol.csv")
 ```
 ## removes the rows that have more than half non values
 ```{r}
-data_pol <- data_pol[(colSums(data_pol =="" |is.na(data_pol)) <=
-                                        ncol(data_pol) / 2), ]
+data_pol <- data_pol[(colSums(is.na(data_pol)) <=
+                        ncol(data_pol) / 2), ]
 ```
 ## sorts values by year and country
 ```{r}
